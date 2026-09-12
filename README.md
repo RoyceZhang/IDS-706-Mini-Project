@@ -1,4 +1,4 @@
-# Week 1 Project: Medical Insurance Cost Analysis
+# Week 2 Project: Medical Insurance Cost Analysis
 
 ## Dataset
 
