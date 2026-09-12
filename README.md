@@ -40,6 +40,10 @@ I grouped the data by smoking status and calculated:
 
 I also grouped by region and calculated the average insurance charge for each region.
 
+I compared Pandas and Polars by running the same grouping operation 1000 times.
+
+In this small dataset Pandas is faster than Polars. However, Polars is often faster on larger datasets because it is designed for efficient column-based data processing.
+
 ## Visualization
 
 I created a scatter plot of BMI versus insurance charges.
