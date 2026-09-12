@@ -10,6 +10,10 @@ The dataset contains information such as age, sex, BMI, number of children, smok
 
 The main target variable for the machine learning section is `charges`.
 
+## Setup and Running Instructions
+
+You can see all required Python packages in requirements.txt.
+
 ## Importing and Inspecting the Data
 
 I used Pandas to import `insurance.csv`.
