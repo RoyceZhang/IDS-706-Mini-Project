@@ -96,6 +96,7 @@ To run the tests locally:
 
 ```bash
 python -m pytest
+```
 
 ## Conclusion
 
