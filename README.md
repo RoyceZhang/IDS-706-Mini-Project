@@ -1,3 +1,5 @@
+[![Python Tests](https://github.com/RoyceZhang/week2-project-and-rust-assignment/actions/workflows/test.yml/badge.svg)](https://github.com/RoyceZhang/week2-project-and-rust-assignment/actions/workflows/test.yml)
+
 # Week 2 Project: Medical Insurance Cost Analysis
 
 ## Dataset
@@ -78,6 +80,22 @@ For basic evaluation, I calculated:
 Since smokers and non-smokers have very different average insurance charges,
 I build separate Linear Regression models for the two groups and compare
 their performance.
+
+## Testing
+
+This project uses `pytest` to test the main parts of the data analysis workflow.
+
+The tests include:
+
+- Loading the insurance dataset
+- Removing duplicate rows during preprocessing
+- Filtering smokers and computing grouped summary statistics
+- Running the complete Linear Regression workflow
+
+To run the tests locally:
+
+```bash
+python -m pytest
 
 ## Conclusion
 
