@@ -1,6 +1,6 @@
 [![Python Tests](https://github.com/RoyceZhang/week2-project-and-rust-assignment/actions/workflows/test.yml/badge.svg)](https://github.com/RoyceZhang/week2-project-and-rust-assignment/actions/workflows/test.yml)
 
-# Week 2 Project: Medical Insurance Cost Analysis
+# Week 2 Project + Week 3 Testing and Reproducibility
 
 ## Dataset
 
