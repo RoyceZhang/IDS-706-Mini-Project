@@ -3,3 +3,4 @@ polars
 matplotlib
 scikit-learn
 jupyter
+pytest
