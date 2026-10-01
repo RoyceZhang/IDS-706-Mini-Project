@@ -1,7 +1,10 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.model_selection import train_test_split
+
+FEATURE_COLUMNS = ["age", "bmi", "children"]
+TARGET_COLUMN = "charges"
 
 
 def load_data(file_path):
@@ -24,24 +27,36 @@ def get_smoker_summary(df):
     return df.groupby("smoker")["charges"].agg(["mean", "count"])
 
 
+def prepare_features(df):
+    """Select the model features and target from the dataset."""
+    features = df[FEATURE_COLUMNS]
+    target = df[TARGET_COLUMN]
+    return features, target
+
+
+def evaluate_predictions(y_true, predictions):
+    """Calculate mean squared error and R-squared for predictions."""
+    mse = mean_squared_error(y_true, predictions)
+    r2 = r2_score(y_true, predictions)
+    return mse, r2
+
+
 def train_model(df):
     """Train a linear regression model using numerical features."""
-    X = df[["age", "bmi", "children"]]
-    y = df["charges"]
+    features, target = prepare_features(df)
 
-    X_train, X_test, y_train, y_test = train_test_split(
-        X,
-        y,
-        test_size=0.2,
-        random_state=42
-    )
+    (
+        features_train,
+        features_test,
+        target_train,
+        target_test,
+    ) = train_test_split(features, target, test_size=0.2, random_state=42)
 
     model = LinearRegression()
-    model.fit(X_train, y_train)
+    model.fit(features_train, target_train)
 
-    predictions = model.predict(X_test)
+    predictions = model.predict(features_test)
 
-    mse = mean_squared_error(y_test, predictions)
-    r2 = r2_score(y_test, predictions)
+    mse, r2 = evaluate_predictions(target_test, predictions)
 
     return model, predictions, mse, r2
