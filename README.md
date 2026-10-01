@@ -106,6 +106,7 @@ python -m pytest
 black --check insurance_project.py tests/
 flake8 insurance_project.py tests/
 ```
+![GitHub Actions matrix](github_actions.png)
 
 The badge at the top of this README reports the workflow status.
 
@@ -119,6 +120,15 @@ project is not a web application.
 docker build -t insurance-project .
 docker run --rm insurance-project
 ```
+
+### Docker Build
+
+![Successful Docker build](docker_build.png)
+
+### Docker Run
+
+![Successful Docker run](docker_run.png)
+
 
 ## Refactoring and Code Quality
 
@@ -135,8 +145,7 @@ This reduces the responsibility of `train_model()` and makes feature selection
 and evaluation independently reusable and testable. The refactoring is verified
 with pytest, Black formatting checks, and flake8 linting locally and in CI.
 
-> **Future screenshot:** Add a GitHub commit diff screenshot here to show the
-> `train_model()` refactoring and the new helper functions.
+![Refactoring diff](refactoring_diff.png)
 
 ## Project Structure
 
